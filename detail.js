@@ -110,8 +110,10 @@ async function loadDetail() {
         document.title = `FoodFinder | ${place.name || 'Chi tiết quán'}`;
         document.getElementById('detail-name').textContent = place.name || 'Không tên';
         document.getElementById('detail-intro').textContent = place.tags?.join(' • ') || 'Quán phù hợp cho nhiều nhu cầu.';
-        document.getElementById('detail-image').src = place.image || '';
-        document.getElementById('detail-image').alt = place.name || 'quán';
+        const detailImage = document.getElementById('detail-image');
+        detailImage.src = place.image || '';
+        detailImage.alt = place.name || 'quán';
+        detailImage.onerror = () => { detailImage.style.display = 'none'; };
 
         const galleryImages = Array.isArray(place.galleryImages) && place.galleryImages.length
             ? place.galleryImages

@@ -196,7 +196,7 @@ function createCard(place) {
         <div class="col-lg-4 col-md-6">
             <article class="restaurant-card">
                 <div class="card-image-wrap">
-                    <img src="${place.image || ""}" alt="${place.name || "restaurant"}">
+                    <img src="${place.image || ""}" alt="${place.name || "restaurant"}" loading="lazy" onerror="this.style.display='none'">
                     <span class="card-badge">${badgeLabel}</span>
                 </div>
                 <div class="restaurant-info">
