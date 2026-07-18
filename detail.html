@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder | Chi tiết quán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <span class="brand-mark">🍜</span>
+                <span>FoodFinder</span>
+            </a>
+            <a class="btn btn-outline-success" href="home.html">Quay lại</a>
+        </div>
+    </nav>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a href="home.html" class="back-link">← Quay lại trang chủ</a>
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="hero-badge">Chi tiết quán</span>
+                    <h1 id="detail-name">Đang tải...</h1>
+                    <p id="detail-intro" class="detail-intro">Đang tải thông tin quán...</p>
+                    <div id="detail-meta" class="detail-meta"></div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="detail-image-card">
+                        <img id="detail-image" src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="detail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Album hình ảnh</p>
+                            <h2>Khám phá không gian quán</h2>
+                        </div>
+                    </div>
+                    <div id="image-carousel" class="carousel slide detail-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators" id="carousel-indicators"></div>
+                        <div class="carousel-inner" id="carousel-inner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#image-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#image-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="detail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Thông tin</p>
+                            <h2>Thông tin quán</h2>
+                        </div>
+                    </div>
+                    <div class="detail-grid">
+                        <div>
+                            <strong>Địa chỉ</strong>
+                            <p id="detail-address">-</p>
+                        </div>
+                        <div>
+                            <strong>Khu vực</strong>
+                            <p id="detail-district">-</p>
+                        </div>
+                        <div>
+                            <strong>Giờ mở cửa</strong>
+                            <p id="detail-time">-</p>
+                        </div>
+                        <div>
+                            <strong>Giá</strong>
+                            <p id="detail-price">-</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4>Điểm nổi bật</h4>
+                        <div id="detail-tags" class="feature-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="detail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Tóm tắt</p>
+                            <h2>Thông tin nhanh</h2>
+                        </div>
+                    </div>
+                    <ul class="detail-summary">
+                        <li><span>Đánh giá</span><strong id="detail-rating">-</strong></li>
+                        <li><span>Danh mục</span><strong id="detail-category">-</strong></li>
+                        <li><span>Địa chỉ</span><strong id="detail-short-address">-</strong></li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4>Tiện ích</h4>
+                        <div id="detail-features" class="feature-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card mt-4">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Đánh giá</p>
+                    <h2>Nhận xét từ người dùng</h2>
+                </div>
+            </div>
+            <div class="review-form mb-4">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Đánh giá của bạn</label>
+                    <textarea id="review-text" class="form-control" rows="4" placeholder="Bạn thích gì ở quán này?"></textarea>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label fw-semibold">Xếp hạng</label>
+                        <div id="star-rating" class="star-rating" aria-label="Chọn số sao">
+                            <button type="button" class="star-btn" data-value="1" aria-label="1 sao">★</button>
+                            <button type="button" class="star-btn" data-value="2" aria-label="2 sao">★</button>
+                            <button type="button" class="star-btn" data-value="3" aria-label="3 sao">★</button>
+                            <button type="button" class="star-btn" data-value="4" aria-label="4 sao">★</button>
+                            <button type="button" class="star-btn" data-value="5" aria-label="5 sao">★</button>
+                        </div>
+                        <input type="hidden" id="review-rating" value="5">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label fw-semibold">Ảnh</label>
+                        <input type="text" id="review-image" class="form-control" placeholder="https://..."></div>
+                    <div class="col-md-4">
+                        <label class="form-label fw-semibold">Video</label>
+                        <input type="text" id="review-video" class="form-control" placeholder="https://..."></div>
+                </div>
+                <div class="mt-3 d-flex gap-2">
+                    <button class="btn btn-success" id="submit-review">Đăng đánh giá</button>
+                    <button class="btn btn-outline-secondary d-none" id="cancel-edit-review">Hủy chỉnh sửa</button>
+                </div>
+            </div>
+            <div id="review-list" class="review-list"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-1">© 2026 FoodFinder</p>
+            <p class="mb-0">Tìm quán đẹp, tốt cho bạn mỗi ngày.</p>
+        </div>
+    </footer>
+
+    <script src="javascript/detail.js"></script>
+</body>
+</html>
